@@ -1,0 +1,77 @@
+
+
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-12 col-sm-8">
+            <h3>PERSONAL DETAILS</h3>
+            <br>
+            <form [formGroup]="personal"  #Form='ngForm' (ngSubmit)="onAdded()" >
+               <div class="form-group">
+                <div class="row align-items-center mt-1">
+                    <div class="form-group col-sm-3 align-self-center" >
+                        <label class="col-form-lable" for="fname">First Name</label>
+                    </div>
+                    <div class="form-group col-sm-8 align-self-center">
+                        <input type="text" class="form-control" name="fname"formControlName='fname' placeholder="FirstName...">
+                    </div>
+                </div>
+                <div class="row align-items-center mt-1">
+                    <div class="form-group col-sm-3 align-self-center" >
+                        <label class="col-form-lable" for="lname">Last Name</label>
+                    </div>
+                    <div class="form-group col-sm-8 align-self-center">
+                        <input type="text" class="form-control" name="lname" formControlName='lname' placeholder="LastName...">
+                    </div>
+                </div>
+                <div class="row align-items-center mt-1">
+                    <div class="form-group col-sm-3 align-self-center" >
+                        <label class="col-form-lable" for="pnumber">Phone Number</label>
+                    </div>
+                    <div class="form-group col-sm-8 align-self-center">
+                        <input type="text" class="form-control" name="pnumber" formControlName='pnumber' placeholder="Phone Number...">
+                    </div>
+                </div>
+                <div class="row align-items-center mt-1">
+                    <div class="form-group col-sm-3 align-self-center" >
+                        <label class="col-form-lable" for="address">Address</label>
+                    </div>
+                    <div class="form-group col-sm-8 align-self-center">
+                        <textarea class="form-control"   formControlName='address'name="address"></textarea>
+                    </div>
+                </div>
+                <div class="row align-items-center mt-1">
+                    <div class="form-group col-sm-3 align-self-center">
+                        <label class="col-form-lable" for="country">Country</label>
+                    </div>
+                    <div class="form-group col-sm-8 align-self-center">
+                        <select (change)="onSelect($event)" formControlName='country' class="form-select">
+                            <option selected>Select the Country</option>
+                            <option *ngFor="let country of countries">{{country.name}}</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="row align-items-center mt-1">
+                    <div class="form-group col-sm-3 align-self-center">
+                        <label class="col-form-lable" for="country">State</label>
+                    </div>
+                    <div class="form-group col-sm-8 align-self-center">
+                        <select formControlName='state' class="form-select">
+                            <option>Select the States</option>
+                            <option *ngFor="let state of states">{{state}}</option>
+                        </select>
+                    </div>
+                </div>
+               </div>
+               <button class="btn btn-primary">
+                <a routerLink='/professional'>next</a>
+            </button>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
